@@ -119,7 +119,8 @@ const defaultDevOrigins = [
   'http://localhost:4000',
   'http://localhost:5173',
   'http://localhost:5174',
-  'https://real-state-admin-amber.vercel.app'
+  'https://real-state-admin-amber.vercel.app',
+  'https://real-estate-server-psi-khaki.vercel.app'
 ];
 
 const allowedOrigins = [
@@ -169,6 +170,7 @@ app.use('/api/blogs', blogRouter);
 
 // Database check middleware for admin routes
 app.use('/api/admin', (req, res, next) => {
+  if (req.method === 'OPTIONS') return next();
   if (mongoose.connection.readyState !== 1) {
     return res.status(503).json({ success: false, message: 'Database not connected' });
   }
