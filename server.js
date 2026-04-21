@@ -120,7 +120,6 @@ const defaultDevOrigins = [
   'http://localhost:5173',
   'http://localhost:5174',
   'https://real-state-admin-amber.vercel.app',
-  'https://real-estate-server-psi-khaki.vercel.app'
 ];
 
 const allowedOrigins = [
