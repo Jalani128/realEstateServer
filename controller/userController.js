@@ -14,8 +14,8 @@ export const adminLogin = async (req, res) => {
       });
     }
 
-    const adminEmail = process.env.ADMIN_EMAIL;
-    const adminPassword = process.env.ADMIN_PASSWORD;
+    const adminEmail = process.env.ADMIN_EMAIL || 'admin@gmail.com';
+    const adminPassword = process.env.ADMIN_PASSWORD || 'admin@123';
 
     if (email !== adminEmail || password !== adminPassword) {
       return res.status(401).json({
