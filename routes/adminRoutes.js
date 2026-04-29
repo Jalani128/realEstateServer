@@ -23,9 +23,9 @@ import {
   getActivityLogs,
   exportActivityLogs,
   // Enhanced Stats
-  getUserStats,
-  getPropertyStats,
-  getEnhancedOverview,
+  // getUserStats,
+  // getPropertyStats,
+  // getEnhancedOverview,
 } from '../controller/adminController.js';
 import { adminProtect } from '../middleware/authMiddleware.js';
 import { registry } from '../utils/circuitBreaker.js';
@@ -35,9 +35,9 @@ const router = express.Router();
 // Apply admin authentication to ALL routes
 router.use(adminProtect);
 
-router.get('/stats', getAdminStats);
-router.get('/appointments', getAllAppointments);
-router.put('/appointments/status', updateAppointmentStatus);
+// router.get('/stats', getAdminStats);
+// router.get('/appointments', getAllAppointments);
+// router.put('/appointments/status', updateAppointmentStatus);
 
 // Listing review queue
 router.get('/properties/pending', getPendingListings);
@@ -66,9 +66,9 @@ router.get('/activity-logs', getActivityLogs);
 router.get('/activity-logs/export', exportActivityLogs);
 
 // Enhanced Stats
-router.get('/stats/users', getUserStats);
-router.get('/stats/properties', getPropertyStats);
-router.get('/stats/overview', getEnhancedOverview);
+// router.get('/stats/users', getUserStats);
+// router.get('/stats/properties', getPropertyStats);
+// router.get('/stats/overview', getEnhancedOverview);
 
 // Circuit breaker monitoring endpoint
 router.get('/circuit-breakers', (req, res) => {
